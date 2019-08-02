@@ -21,6 +21,16 @@ public class Utility {
 		int integerValue = scanner.nextInt();
 		return integerValue;
 	}
+	
+	
+	public static char charInput()
+	{
+		char charValue = scanner.next().charAt(0);
+		return charValue;
+	}
+	
+	
+	
 	public static String stringInput()
 	{
 		String stringValue = scanner.next();
@@ -31,6 +41,14 @@ public class Utility {
 		String lineValue = scanner.nextLine();
 		return lineValue;
 	}
+	public static double doubleInput()
+	{
+		Double doubleValue = scanner.nextDouble();
+		return doubleValue;
+	}
+	
+	
+	
 	
 	
 	
@@ -358,17 +376,121 @@ public static double stats( double average,int n,double x1,double x2,double x3,d
 	// TODO Auto-generated method stub
 	return average;
 }
+
+
+/*****************************************************************************
+ *  Purpose: In this Utility class there is a logic of calculate chill base on temperature and air speed.
+ *  @author  Bankar Reshma R
+ *  @version 1.0
+ * @param m 
+ * @param d 
+ *  @since   32-07-2019
+/****************************************************************************/		
+
+
+
+
+
+
+
+
+public static double windChill(double chill1,double Temp,double speed) {
+	
+	chill1 = 35.74 + 0.6215*Temp + (0.4275*Temp - 35.75) * Math.pow(speed, 0.16);
+	return chill1;
+}
+
+
+/*****************************************************************************
+ *  Purpose: In this Utility class there is a logic of print the day of week.
+ *  @author  Bankar Reshma R
+ *  @version 1.0
+ * @param m 
+ * @param d 
+ *  @since   32-07-2019
+/****************************************************************************/		
+
+
+
+
+ public static int dayOfWeek(int d, int m, int y) {
+	int y0 = y - (14 - m) / 12;
+	int x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
+	int m0 = m + 12 * ((14 - m) / 12) - 2;
+	int d0 = (d + x + (31 * m0) / 12) % 7;
+	return d0;
+}
+
+ 
+ 
+ /*****************************************************************************
+  *  Purpose: In this Utility class there is a logic of temperature conversion.
+  *  @version 1.0
+  * @param m 
+  * @param d 
+  *  @since   32-07-2019
+ /****************************************************************************/		
+
+
+ 
+ 
+ public static int temperaturConversion(int tem, char t) {
+		int conver;
+		if (t == 'c' || t == 'C') {
+			conver = (tem * 9 / 5) + 32;
+		} else if (t == 'f' || t == 'F') {
+			conver = (tem - 32) * 5 / 9;
+		} else {
+			System.out.println("Enter correct input");
+			return 0;
+
+		}
+		return conver;
+	}
+
+
+ /*****************************************************************************
+  *  Purpose: In this Utility class there is a logic of calculate Monthly car loan amount.
+  *  @author  Bankar Reshma R
+  *  @version 1.0
+  * @param m 
+  * @param d 
+  *  @since   32-07-2019
+ /****************************************************************************/		
+
+
+
+public static double monthlyPayment(double p, double y, double r) {
+	double n = 12 * y;
+	double r0 = r / (12 * 100);
+	double payment = p * r0 / (1 - Math.pow((1 + r0), -n));
+	return payment;
 }
 
 
 
 
 
+public static double sinVal(double degrees)
+{
+	
+	double radians = Math.toRadians(degrees);
+	 double sinValue = Math.sin(radians);
+	
+	return sinValue;
+}
 
 
-
-
-
-		
+	 public static double cosVal(double degrees)
+	 {
+	 	
+	 			double radians = Math.toRadians(degrees);
+	 	 double cosValue = Math.cos(radians);
+	 	
+	 	return cosValue;
+	 
+	 
+}
+}	
 
  
