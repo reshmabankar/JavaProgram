@@ -15,7 +15,7 @@ public class Distance
        double dist	=Utility.distance(x, y);
        
      
-		// compute distance to (0, 0)
+		
        
     	System.out.println("distance from (" + x + ", " + y + ") to (0, 0) = " + dist);
     	System.out.println("Math power(x,y)="+Math.pow(x, y));

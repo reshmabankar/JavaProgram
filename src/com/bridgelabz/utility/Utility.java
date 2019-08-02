@@ -10,7 +10,30 @@
 
 package com.bridgelabz.utility;
 
+import java.util.Scanner;
+
 public class Utility {
+	
+	static Scanner scanner = new Scanner(System.in);
+	
+	public static int integerInput()
+	{
+		int integerValue = scanner.nextInt();
+		return integerValue;
+	}
+	public static String stringInput()
+	{
+		String stringValue = scanner.next();
+		return stringValue;
+	}
+	public static String line()
+	{
+		String lineValue = scanner.nextLine();
+		return lineValue;
+	}
+	
+	
+	
 	
 	
 		public static int add(int num1,int num2) 
@@ -197,44 +220,35 @@ return 0;
  *  @version 1.0
  * @param m 
  * @param d 
+ * @return 
  *  @since   31-07-2019
 /****************************************************************************/		
 
 
 
 
-public static int springseason(int d, int m)
+public static int springSeason(int day, int month)
+
 {
-	{
-		{
-		if(3 <= m && 20<=d || 6 >=m  && 20>=d )
-		{
-			{
-				if(m==3)
+		if(3<=month && 6>=month)
+			
 				{
-					System.out.println("March");
-				}
-				if(m==6)
-				{
-					System.out.println("June");
-				}
 				
-			}
-		
+					System.out.println("True");
 	
-		System.out.println("True");
-		
-		}
-		
+				}
+			
 		else
 		{
 			System.out.println("False");
 		}
-		}
-	return 0;
+	
+return 0;
+		
+}
 
-}
-}
+
+
 
 
 
@@ -305,12 +319,12 @@ public static double distance(double x,double y)
 
 
 /*****************************************************************************
- *  Purpose: In this Utility class there is a logic of Calculate distance of point (x,y) form the origin(0,0).
+ *  Purpose: In this Utility class there is a logic of Calculate sum of two dice.
  *  @author  Bankar Reshma R
  *  @version 1.0
  * @param m 
  * @param d 
- *  @since   31-07-2019
+ *  @since   32-07-2019
 /****************************************************************************/		
 
 
@@ -320,7 +334,38 @@ public static int SumOfDice(int die1, int die2)
 	int roll = die1 + die2;
 	return roll;
 }
+
+
+
+/*****************************************************************************
+ *  Purpose: In this Utility class there is a logic of calculate the average,min,max of any five numbers form 0-1.
+ *  @author  Bankar Reshma R
+ *  @version 1.0
+ * @param m 
+ * @param d 
+ *  @since   32-07-2019
+/****************************************************************************/		
+
+
+
+public static double stats( double average,int n,double x1,double x2,double x3,double x4,double x5) 
+{
+	
+
+	average = (x1 + x2 + x3 + x4 + x5) / n;
+
+	
+	// TODO Auto-generated method stub
+	return average;
 }
+}
+
+
+
+
+
+
+
 
 
 

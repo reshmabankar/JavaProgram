@@ -1,7 +1,5 @@
 package com.bridgelabz.functional;
 
-import java.util.Scanner;
-
 import com.bridgelabz.utility.Utility;
 
 public class Springseason 
@@ -9,15 +7,13 @@ public class Springseason
 	public static void main (String[] args)
 	{
 
-        Scanner sc = new Scanner(System.in);
-        int m,d;
+        int month,day;
+       
+        System.out.print("Please enter day and month: ");
+        day= Utility.integerInput();
+        month = Utility.integerInput();
+        int sprsea = Utility.springSeason(day, month);
         
-
-        System.out.print("Please enter month and day: ");
-        m = sc.nextInt();
-        d= sc.nextInt();
-        int springseason = Utility.springseason(d, m);
-        sc.close();
 	} 
 	   
 		
