@@ -13,7 +13,7 @@ public class Springseason
         day= Utility.integerInput();
         month = Utility.integerInput();
         int sprsea = Utility.springSeason(day, month);
-        
+        System.out.println(sprsea);
 	} 
 	   
 		

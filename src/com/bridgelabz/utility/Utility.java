@@ -22,7 +22,7 @@ public class Utility {
 		return integerValue;
 	}
 	
-	
+			
 	public static char charInput()
 	{
 		char charValue = scanner.next().charAt(0);
@@ -342,7 +342,7 @@ public static double distance(double x,double y)
  *  @version 1.0
  * @param m 
  * @param d 
- *  @since   32-07-2019
+ *  @since   1-08-2019
 /****************************************************************************/		
 
 
@@ -361,7 +361,7 @@ public static int SumOfDice(int die1, int die2)
  *  @version 1.0
  * @param m 
  * @param d 
- *  @since   32-07-2019
+ *  @since   1-08-2019
 /****************************************************************************/		
 
 
@@ -384,7 +384,7 @@ public static double stats( double average,int n,double x1,double x2,double x3,d
  *  @version 1.0
  * @param m 
  * @param d 
- *  @since   32-07-2019
+ *  @since   1-08-2019
 /****************************************************************************/		
 
 
@@ -407,7 +407,7 @@ public static double windChill(double chill1,double Temp,double speed) {
  *  @version 1.0
  * @param m 
  * @param d 
- *  @since   32-07-2019
+ *  @since   2-08-2019
 /****************************************************************************/		
 
 
@@ -418,9 +418,10 @@ public static double windChill(double chill1,double Temp,double speed) {
 	int x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
 	int m0 = m + 12 * ((14 - m) / 12) - 2;
 	int d0 = (d + x + (31 * m0) / 12) % 7;
+	
 	return d0;
 }
-
+ 
  
  
  /*****************************************************************************
@@ -428,7 +429,7 @@ public static double windChill(double chill1,double Temp,double speed) {
   *  @version 1.0
   * @param m 
   * @param d 
-  *  @since   32-07-2019
+  *  @since   2-08-2019
  /****************************************************************************/		
 
 
@@ -455,7 +456,7 @@ public static double windChill(double chill1,double Temp,double speed) {
   *  @version 1.0
   * @param m 
   * @param d 
-  *  @since   32-07-2019
+  *  @since   2-08-2019
  /****************************************************************************/		
 
 
@@ -491,6 +492,425 @@ public static double sinVal(double degrees)
 	 
 	 
 }
-}	
+	 /*****************************************************************************
+	  *  Purpose: In this Utility class there is a logic of print the power of 2.
+	  *  @author  Bankar Reshma R
+	  *  @version 1.0
+	  * @param m 
+	  * @param d 
+	  *  @since   3-08-2019
+	 /****************************************************************************/		
+	 
+	 
 
- 
+	 public static int printTable(int power) {
+			int val = 1;
+			for (int i = 1; i <= power; i++) {
+				val = val * 2;
+				System.out.println(val);
+			}
+			return val;
+		}
+
+	 
+	 
+	 /*****************************************************************************
+	  *  Purpose: In this Utility class there is a logic of harmonic number.
+	  *  @author  Bankar Reshma R
+	  *  @version 1.0
+	  * @param m 
+	  * @param d 
+	  *  @since   3-08-2019
+	 /****************************************************************************/		
+		/**
+		 * Function to calculate the nth harmonic no
+		 * 
+		 * @param n the value of harmonic no
+		 * @return
+		 */
+	 public static double harmonic(double n) 
+	 {
+	 double h = 1;
+	 for (double i = 2; i <= n; i++) 
+	 {
+		h = h + 1 / i;
+	 }
+	 return h;
+	 }
+
+
+	 /*****************************************************************************
+	  *  Purpose: In this Utility class there is a logic of find suare root of non negative value using newton method.
+	  *  @author  Bankar Reshma R
+	  *  @version 1.0
+	  * @param m 
+	  * @param d 
+	  *  @since   3-08-2019
+	 /****************************************************************************/	
+
+public static double sqrt(double t,int c){
+
+double epsilon=1e-15;
+t=c;
+while(Math.abs(t-c/t)>epsilon*t) 
+{
+	t=(c/t+t)/2;
+}
+return t;
+}
+
+
+
+
+/*****************************************************************************
+ *  Purpose: In this Utility class there is a logic of Gamling Simulator.
+ *  @author  Bankar Reshma R
+ *  @version 1.0
+ * @param m 
+ * @param d 
+ *  @since   3-08-2019
+/****************************************************************************/	
+
+/**
+ * Function to simulate gamble
+ * 
+ * @param n      the value of no of times to bet
+ * @param $stack the amount which you have
+ * @param $goal  the value which to reach to win the gamble (not the bet)
+ * @return 
+ */
+public static void gamble(int noOfTimes, int $Stack, int $Goal) {
+	int bets = 0; // total number of bets made
+	int wins = 0; // total number of games won
+
+	// repeat number of times
+	for (int i = 0; i < noOfTimes; i++) {
+		int cash = $Stack;
+
+		while (cash > 0 && cash < $Goal) {
+			bets++;
+
+			if (Math.random() < 0.5)
+				cash++; // win $1
+			else
+				cash--; // lose $1
+		}
+		if (cash == $Goal)
+			wins++; // to find no. of wins
+	}
+
+	// print results
+	System.out.println();
+	System.out.println(wins + " wins out of of " + noOfTimes);
+	System.out.println("Percent of games won = " + 100.0 * wins / noOfTimes);
+	System.out.println("Percent of games lost = " + 100.0 * (noOfTimes - wins) / noOfTimes);
+	System.out.println("Total bets in " + noOfTimes + " games = " + bets);
+
+}
+
+
+
+/*****************************************************************************
+ *  Purpose: In this Utility class there is a logic of prime Number between the range.
+ *  @author  Bankar Reshma R
+ *  @version 1.0
+ * @param m 
+ * @param d 
+ *  @since   3-08-2019
+/****************************************************************************/	
+
+public static void prime(int s1, int s2)
+{
+	int i,j,count = 0;
+
+for(i = s1; i <= s2; i++)
+{
+	for( j = 2; j < i; j++)
+	{
+		if(i % j == 0)
+		{
+			count = 0;
+			break;
+		}
+		else
+		{
+			count = 1;
+		}
+	}
+	if(count == 1)
+	{
+		System.out.println(i);
+	}
+}
+}
+
+
+
+
+/*****************************************************************************
+ *  Purpose: In this Utility class there is a logic of FlipCoin.
+ *  @author  Bankar Reshma R
+ *  @version 1.0
+ * @param m 
+ * @param d 
+ *  @since   3-08-2019
+/***************************************************************
+************/	
+
+public static int flipPerc(int times)
+{
+	double heads = 0;
+	for (int i = 0; i < times; i++) 
+	{
+		if (Math.random() > 0.5)
+		{
+			heads++;
+		}
+	}
+	System.out.println("heads percentage is " + (float) (heads / times) * 100);
+	System.out.println("tails percentage is " + (float) (times - heads) / times * 100);
+
+return 0;
+
+}
+
+
+/*****************************************************************************
+ *  Purpose: In this Utility class there is a logic of Prime factor.
+ *  @author  Bankar Reshma R
+ *  @version 1.0
+ * @param m 
+ * @param d 
+ *  @since   3-08-2019
+/***************************************************************
+************/	
+
+
+
+
+
+public static boolean isPrime(int n) {
+	for (int i = 2; i <= n / 2; i++) {
+		if (n % i == 0) {
+			return false;
+		}
+	}
+	return true;
+}
+
+public static void primeFactors(int n) {
+	for (int i = 2; i <= n; i++) {
+		int t = n % i;
+		if (t == 0) {
+			if (isPrime(i))
+				System.out.println(i + " ");
+		}
+	}
+}
+
+
+/*****************************************************************************
+ *  Purpose: In this Utility class there is a logic of print smallest and largest number.
+ *  @author  Bankar Reshma R
+ *  @version 1.0
+ * @param m 
+ * @param d 
+ *  @since   3-08-2019
+/***************************************************************
+************/	
+
+
+public static void print2Smallest(int arr[]) 
+{ 
+    int first, second, arr_size = arr.length; 
+
+    first = second = Integer.MAX_VALUE; 
+    for (int i = 0; i < arr_size ; i ++) 
+    { 
+   
+        if (arr[i] < first) 
+        { 
+            second = first; 
+            first = arr[i]; 
+        } 
+
+        else if (arr[i] < second) 
+            second = arr[i]; 
+    } 
+    
+        System.out.println("Second Smallest element is: " + second); 
+        
+} 
+
+
+
+public static void print2largest(int[] arr) 
+{ 
+    int first, second, arr_size = arr.length; 
+
+    first = second = Integer.MIN_VALUE; 
+    for (int i = 0; i < arr_size ; i ++) 
+    { 
+   
+        if (arr[i] > first) 
+        { 
+            second = first; 
+            first = arr[i]; 
+        } 
+
+        else if (arr[i] > second) 
+            second = arr[i]; 
+    } 
+    
+        System.out.println("Second largest element is: "+ second); 
+        
+}
+
+
+
+
+/*****************************************************************************
+ *  Purpose: In this Utility class there is a logic of find out the repeated number.
+ *  @author  Bankar Reshma R
+ *  @version 1.0
+ * @param m 
+ * @param d 
+ *  @since   3-08-2019
+/***************************************************************
+************/	
+
+
+public static void printRepeatno(int arr[])  
+{ 
+    int i, j; 
+    System.out.println("Repeated Elements are :"); 
+    int size = 100;
+	for (i = 0; i < size; i++)  
+    { 
+        for (j = i + 1; j < size; j++)  
+        { 
+            if (arr[i] == arr[j])  
+                System.out.print(arr[i] + " "); 
+        } 
+    } 
+}
+
+/*****************************************************************************
+ *  Purpose: In this Utility class there is a logic of generates the result of rolling a fair six­sided die
+(an integer between 1 and 6)..
+ *  @author  Bankar Reshma R
+ *  @version 1.0
+ * @param m 
+ * @param d 
+ *  @since   3-08-2019
+/***************************************************************************/	
+
+public static int roll(int roll)  
+{
+
+int SIDES = 6;
+
+roll = (int) (Math.random() * SIDES) + 1;
+
+return roll;
+
+}
+
+/*****************************************************************************
+ *  Purpose: In this Utility class there is a logic of Taylor series expansions for sin.
+ *  @author  Bankar Reshma R
+ *  @version 1.0
+ * @param m 
+ * @param d 
+ *  @since    5 -08-2019
+/***************************************************************************/	
+
+public static double sin(double sum,double x)  
+{
+x = x % (2 * Math.PI);
+
+// compute the Taylor series approximation
+double term = 1.0;      // ith term = x^i / i!
+sum  = 0.0;      // sum of first i terms in taylor series
+
+for (int i = 1; term != 0.0; i++) {
+    term *= (x / i);
+    if (i % 4 == 1) sum += term;
+    if (i % 4 == 3) sum -= term;
+}
+return sum;
+}
+
+
+/*****************************************************************************
+ *  Purpose: In this Utility class there is a logic of Taylor series expansions for cos.
+ *  @author  Bankar Reshma R
+ *  @version 1.0
+ * @param m 
+ * @param d 
+ *  @since    5 -08-2019
+/***************************************************************************/	
+
+public static double cos(double sum,double x)  
+{
+x = x % (2 * Math.PI);
+
+// compute the Taylor series approximation
+double term = 1.0;      // ith term = x^i / i!
+sum  = 0.0;      // sum of first i terms in taylor series
+
+for (int i = 1; term != 0.0; i++) {
+    term *= (x / i);
+    if (i % 2 == 0) sum += term;
+    if (i % 1 == 0) sum -= term;
+}
+return sum;
+}
+
+
+
+
+
+public static int[] toBinary(int d) {
+
+	String bin = "";
+	while (d != 0) {
+		bin = (d % 2) + bin;
+		d /= 2;
+	}
+	while (bin.length() % 4 != 0) {
+		bin = 0 + bin;
+	}
+	return stringToIntArray(bin);
+}
+
+/**
+ * Function to convert string to int array helper function for swapnibble in
+ * Binary.java class
+ *
+ * @param bin String of binary no
+ * @return return integer array
+ */
+static int[] stringToIntArray(String bin) {
+	int[] binary = new int[bin.length()];
+	for (int i = 0; i < binary.length; i++) {
+		binary[i] = bin.charAt(i) - 48;
+	}
+	return binary;
+}
+
+public static int toDecimal(int[] binary) {
+	int dec = 0, j = 0;
+	for (int i = binary.length - 1; i >= 0; i--) {
+		if (binary[i] == 1) {
+			dec = dec + (int) Math.pow(2, j);
+		}
+		j++;
+	}
+	return dec;
+}
+
+
+}
+
+
