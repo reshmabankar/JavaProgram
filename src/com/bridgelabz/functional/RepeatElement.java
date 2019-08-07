@@ -1,4 +1,4 @@
-package com.bridgelabz.algorithm;
+package com.bridgelabz.functional;
 import com.bridgelabz.utility.*;
 class RepeatElement  
 { 

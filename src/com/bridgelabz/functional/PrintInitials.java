@@ -12,11 +12,18 @@ public class PrintInitials {
 	                for (column = 1; column <= 5; column++) {
 	                    if (column == 1 || column ==5)
 	                        System.out.print("*");
+	                    if(column==5){
+	                    	System.out.print("*");
+	                    }
 	                }
 	            System.out.print("*");
 	          
 	            System.out.println();
 	        }
-	        System.exit(0);
+	        for(column=5;row<=5;row++)
+	        {
+	            System.out.print("*");
+	        }
+	        System.exit(column);
 	    }
 	}
